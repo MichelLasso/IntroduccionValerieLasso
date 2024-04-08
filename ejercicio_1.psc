@@ -1,18 +1,18 @@
 Algoritmo programa_1_trabajo_asincronico 
 	dimension marca[100],precio[100],cantidad[100],id[100],m[100],t_precio[100],marca_c[100]
-	definir precio como real 
-	definir marca_deseada,opcion_menu,n_modelo,cantidad_c como entero 
-	definir n como logico 
+//DEFINIR LAS DIMENSIONES
 	marca[1]="phone 15 pro max"
 	marca[2]="phone 15 pro"
 	marca[3]="phone 14 pro max "
-	marca[4]="galaxy S24 ultra"
-	marca[5]="galaxy S22 ultra"
+	marca[4]="galaxy s24 ultra"
+	marca[5]="galaxy s22 ultra"
+	
 	precio[1]=6898960 
 	precio[2]=5829960
 	precio[3]=6898960 
 	precio[4]=3499900
 	precio[5]=3099900
+	
 	cantidad[1]=30
 	cantidad[2]=35
 	cantidad[3]=45
@@ -20,31 +20,28 @@ Algoritmo programa_1_trabajo_asincronico
 	cantidad[5]=20
 	
 	Definir cliente Como Logico
-	cliente  = Verdadero
-	Definir productos_cliente Como Logico
-	productos_cliente=Verdadero
-	cantidadProductos=1
+	cliente  = Verdadero //FIN DEL MIENTRAS SI ES FALSO 
 	
 	escribir"----------------------------------------------------------------"
-	escribir"RING RING"
+	escribir"RING RING" //NOMBRE DEL LOCAL
 	escribir"----------------------------------------------------------------"
 	escribir"Por favor ingrese su nombre para poder iniciar"
-	leer nombre
+	leer nombre //DATO DEL USUARIO
 	
 	Mientras cliente = Verdadero Hacer
 		escribir""
 		escribir"----------------------------------------------------------------"
-		escribir"Bienvenido a mi tienda ",nombre " ;)"
+		escribir"Bienvenido a mi tienda ",nombre " ;)" //OPCIONES DEL USUARIO
 		Escribir " Escoge una de las opciones para tu carrito de compras:"
 		escribir""
 		Escribir "1. Marcas " 
 		Escribir "2. Elija la marca que desea comprar"
 		Escribir "3. Finalizar." 
+		Leer opcion_menu //DATO DEL USUARIO
 		escribir"----------------------------------------------------------------"
-		Leer opcion_menu
 
-		Segun opcion_menu Hacer
-			1:
+		Segun opcion_menu Hacer 
+			1://LO QUE HAY EN EL LOCAL
 				escribir"----------------------------------------------------------------"
 				escribir"° Marcas"
 				escribir""
@@ -61,7 +58,8 @@ Algoritmo programa_1_trabajo_asincronico
 				esperar 3 segundos 
 				escribir"espera 3 segundos para el menu inicial"
 				esperar 3 segundos 
-			2:
+				
+			2://LOS PRODUCTOS DEL L0CAS CON SUS PRECIOS Y UNIDADES 
 				escribir"----------------------------------------------------------------"
 				escribir"Marcas Precios y Unidades"
 				escribir"----------------------------------------------------------------"
@@ -87,32 +85,33 @@ Algoritmo programa_1_trabajo_asincronico
 				escribir""
 				escribir"Que marca desea comprar "    
 				leer marca_c[100]
+				
 				segun  marca_c[100] hacer 
 					1: escribir""
 						escribir"APPLE" 
 						escribir""
-						escribir"1. ¡Phone 15 Pro Max"
+						escribir"1. ¡Phone 15 Pro Max"//3 PRODUCTOS APPLE EN EL LOCAL
 						escribir "2. ¡Phone 15 Pro"
 						escribir"3. iPhone 14 Pro Max"
 						escribir""
 						escribir"Que modelo desea comprar :)"
 						escribir"ingrese el nombre del modelo deseado"
-						leer marca[100]
-						segun marca[100] hacer
+						leer marca[100]//DATO DEL USUARIO AL COMPRAR EL CELULAR
+						segun marca[100] hacer //SEGUN ESE DATO EL PROGRAMA EMPEZARA CON EL PROCESO DE COMPRA
 						
 							marca[1]:  
 								escribir""
-								escribir "El ¡Phone 15 Pro Max"
+								escribir "El ¡Phone 15 Pro Max"//NOMBRE DEL CELULAR
 								escribir""
 								escribir"Disponible : ",cantidad[1]
 								escribir"ingrese las unidades a comprar" 
-								leer cantidad1
-								cantidad[1]<-cantidad[1]-cantidad1
-								escribir""
+								leer cantidad1 //DATO DEL USUARIO-ELIJE LA CANTIDAD Q DESEE COMPRAR
+								cantidad[1]<-cantidad[1]-cantidad1//FORMULA PARA ACTUALIZAR EL INVENTARIO
 								escribir"Quedan: ",cantidad[1]," ¡Phone 15 Pro Max "
-								escribir""
-								t_precio[1]<-precio[1]*cantidad1
-								escribir"tiene que pagar: ", t_precio[1]," por el producto "
+								t_precio[1]<-precio[1]*cantidad1//FORMULA PARA CALCULAR EL PRECIO DEL PRODUCTO QUE EL CLIENTE QUIERE COMPRAR
+								escribir"tiene que pagar: ", t_precio[1]," por el producto "//MOSTRAR AL USUARIO LO QUE TIENE PAGAR POR EL PRODUCTO
+								// TODAS LAS MARCAS TIENEN EL MISMO PROCESO
+								
 							marca[2]: 
 								escribir""
 								escribir"¡Phone 15 Pro"
@@ -124,6 +123,7 @@ Algoritmo programa_1_trabajo_asincronico
 								escribir"Quedan: ",cantidad[2]," ¡Phone 15 Pro"
 								t_precio[2]<- precio[2]*cantidad2
 								escribir"tiene que pagar: ",t_precio[2], " por el producto"
+								
 							marca[3]:
 								escribir""
 								escribir"iPhone 14 Pro Max "
@@ -148,6 +148,7 @@ Algoritmo programa_1_trabajo_asincronico
 						escribir"ingrese el nombre del modelo deseado"
 						leer modelo_c
 						segun modelo_c hacer
+					
 						marca[4]: 
 								escribir""
 								escribir" Galaxy S24 Ultra"
@@ -159,11 +160,12 @@ Algoritmo programa_1_trabajo_asincronico
 								escribir"Quedan: ",cantidad[4] " Galaxy S24 Ultra"
 								t_precio[4]<-precio[4]*cantidad4
 								escribir"tiene que pagar: ",t_precio[4], " por el producto"
+								
 						marca[5]:
 							    escribir""
 								escribir"Galaxy S22 Ultra"
 								escribir""
-								escribir"Disponible : ",cantidad5
+								escribir"Disponible : ",cantidad[5]
 								escribir"ingrese las unidades deseadas" 
 								leer cantidad5
 								cantidad[5]<-cantidad[5]-cantidad5
@@ -176,10 +178,11 @@ Algoritmo programa_1_trabajo_asincronico
 						
 				        FinSegun
 				  
-					3: cliente=falso
+					3: cliente=falso //TERMINAR CON EL PROGRAMA 
 					 escribir"gracias ", nombre," por comprar en nuestra tienda :)"
 				 FinSegun
-	   esperar 4 Segundos
+	   esperar 4 Segundos//TIEMPO PARA QUE SALGA EL MENU PRINCIPAL NUEVAMENTE
 	Fin mientras 
 	
 FinAlgoritmo
+//DESARROLLADO POR VALERIE LASSO
